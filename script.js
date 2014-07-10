@@ -21,6 +21,7 @@ $(function(){
         var height = element.outerHeight();
             push.height(height);
             content.css('margin-' + definition.stickTo, -height);
+             // Lets the footer/header show only the visible area part
             element.css(definition.stickTo, -(height - visibleArea));
         }
         
