@@ -1,5 +1,7 @@
 /* ************************************************************************
     Sticky Definitions
+    Author: Gerry Weißbach
+    GitHub: https://github.com/gamma/sticky-header-and-footer
 ************************************************************************ */
 $(function(){
    
