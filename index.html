@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="ie" lang="en"	dir="ltr"><![endif]-->
+<!--[if gte IE 9]><!--><html lang="en"	dir="ltr"><!--<![endif]-->
+<head>
+
+	<meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="content-language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Template with script and styles for a Sticky Footer that is always visible with a hint and pops out when needed or the site scrolls down to it."/>
+	
+	<title>Sticky Footer with hint</title>
+
+	<link rel="stylesheet/less" type="text/css" href="./styles.less"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
+
+	<script src="./script.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div id="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum libero nisl, pellentesque pulvinar augue mattis eu. Nam eu vulputate neque. Morbi mauris purus, feugiat ut massa quis, fermentum congue justo. Fusce venenatis massa eu nibh vestibulum hendrerit. Pellentesque sed augue eget est pulvinar facilisis. Phasellus eleifend vestibulum magna vel varius. Sed quis quam pellentesque sapien interdum imperdiet. Morbi sit amet nisi vitae lorem congue egestas.</p>
+        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce varius neque urna, in pharetra nisi malesuada consectetur. Sed sodales pellentesque elit, sit amet hendrerit leo iaculis id. Pellentesque euismod nunc et libero vulputate vehicula. Cras sed lorem rhoncus, mattis mauris id, bibendum odio. Maecenas quis adipiscing enim. Ut luctus congue nisi, nec aliquet sapien elementum ut. Donec faucibus, quam ut tincidunt bibendum, felis quam consectetur tellus, in aliquet urna leo eu massa.</p>
+
+        <p>Morbi a venenatis nibh. Ut eu ullamcorper turpis, vitae vulputate libero. Pellentesque semper, odio at rhoncus congue, nisi ipsum dapibus purus, in aliquam erat arcu eget elit. In hac habitasse platea dictumst. Duis enim elit, sagittis sed adipiscing et, pretium venenatis leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vestibulum suscipit elit, eu dapibus nisi faucibus quis. Pellentesque faucibus diam at orci lacinia, at aliquam nulla gravida. Aliquam ac vulputate erat. Vestibulum tincidunt nisl sed augue euismod pellentesque. Aenean eget leo in ipsum rhoncus bibendum blandit rutrum arcu. Morbi tempus tellus a sapien ultricies aliquam. Phasellus bibendum eros ac ante volutpat eleifend. Suspendisse vulputate dignissim mi quis lacinia. Donec nunc nibh, pharetra ac nulla id, dignissim pharetra sem.</p>
+        
+        <!-- this push element needs to be placed in you main content. It emulates the correct height of the document -->
+        <div class="push"></div> 
+    </div>
+
+    <!-- Footer needs to be directly inside body -->
+    <footer>
+        <!-- the visibleSticky can contain whatever you want to be displayed when the footer is sticked to the bottom -->
+        <!-- it will be hidden when the whole bottom is visible -->
+        <div class="visibleSticky">
+            <span>show footer</span>
+        </div>
+
+        <!-- here comes whatever you want to have in your sticky footer -->
+        <div class="footer">
+          <p>Morbi a venenatis nibh. Ut eu ullamcorper turpis, vitae vulputate libero. Pellentesque semper, odio at rhoncus congue, nisi ipsum dapibus purus, in aliquam erat arcu eget elit. In hac habitasse platea dictumst. Duis enim elit, sagittis sed adipiscing et, pretium venenatis leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vestibulum suscipit elit, eu dapibus nisi faucibus quis. Pellentesque faucibus diam at orci lacinia, at aliquam nulla gravida. Aliquam ac vulputate erat. Vestibulum tincidunt nisl sed augue euismod pellentesque. Aenean eget leo in ipsum rhoncus bibendum blandit rutrum arcu. Morbi tempus tellus a sapien ultricies aliquam. Phasellus bibendum eros ac ante volutpat eleifend. Suspendisse vulputate dignissim mi quis lacinia. Donec nunc nibh, pharetra ac nulla id, dignissim pharetra sem.</p>
+        </div>
+    </footer>
+</body>
+</html>

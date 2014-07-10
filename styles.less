@@ -1,0 +1,76 @@
+/* Based up on: Sticky Footer by Ryan Fait / http://ryanfait.com/ */
+
+@import url("./lesshat.less");
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+p {
+    padding: 25px 50px;
+}
+
+#content {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto 0px; /* the bottom margin is the negative value of the footer's height */
+	
+	width: 500px;
+}
+
+@footer-color: rgb(5,55,126);
+@footer-normal: desaturate(lighten(@footer-color, 20%), 50%);
+
+footer {
+    color: #fff;
+    background: @footer-normal;
+    width: 100%;
+    transition: all ease-in-out 500ms;
+    bottom: -100%;
+    
+    .box-shadow(0 5px 5px -3px #000 inset);
+}
+
+footer.sticky {
+    position: fixed;
+    background: fadeout(@footer-color, 20%);
+    .box-shadow(none);
+}
+
+footer.sticky div.visibleSticky,
+footer .footer {
+    transition: all ease-in-out 500ms;
+}
+
+footer.sticky:hover {
+    .box-shadow(0 5px 5px -3px #000 inset);
+    background: @footer-normal;
+    bottom: 0 !important;
+}
+
+footer div.visibleSticky,
+footer.sticky:hover div.visibleSticky,
+footer.sticky .footer {
+    opacity: 0;
+}
+
+footer.sticky div.visibleSticky,
+footer.sticky:hover .footer {
+    opacity: 1;
+}
+
+footer .footer {
+    opacity: 1;
+    padding: 25px 50px;
+}
+
+div.visibleSticky {
+    text-align: right;
+    padding: 3px 10px;
+}
