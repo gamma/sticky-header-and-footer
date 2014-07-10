@@ -24,14 +24,32 @@
 
 <body>
 
+    <!-- Header needs to be directly inside body -->
+    <header>
+        <!-- here comes whatever you want to have in your sticky footer -->
+        <div class="content">
+          <p>Morbi a venenatis nibh. Ut eu ullamcorper turpis, vitae vulputate libero. Pellentesque semper, odio at rhoncus congue, nisi ipsum dapibus purus, in aliquam erat arcu eget elit. In hac habitasse platea dictumst. Duis enim elit, sagittis sed adipiscing et, pretium venenatis leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vestibulum suscipit elit, eu dapibus nisi faucibus quis. Pellentesque faucibus diam at orci lacinia, at aliquam nulla gravida. Aliquam ac vulputate erat. Vestibulum tincidunt nisl sed augue euismod pellentesque. Aenean eget leo in ipsum rhoncus bibendum blandit rutrum arcu. Morbi tempus tellus a sapien ultricies aliquam. Phasellus bibendum eros ac ante volutpat eleifend. Suspendisse vulputate dignissim mi quis lacinia. Donec nunc nibh, pharetra ac nulla id, dignissim pharetra sem.</p>
+        </div>
+
+        <!-- the visibleSticky can contain whatever you want to be displayed when the header is sticked to the top -->
+        <!-- it will be hidden when the whole top is visible -->
+        <div class="visibleSticky">
+            <span>show header</span>
+        </div>
+
+    </header>
+    
     <div id="content">
+        <!-- this push element needs to be placed in you main content. It emulates the correct height of the document -->
+        <div class="push-header"></div> 
+
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum libero nisl, pellentesque pulvinar augue mattis eu. Nam eu vulputate neque. Morbi mauris purus, feugiat ut massa quis, fermentum congue justo. Fusce venenatis massa eu nibh vestibulum hendrerit. Pellentesque sed augue eget est pulvinar facilisis. Phasellus eleifend vestibulum magna vel varius. Sed quis quam pellentesque sapien interdum imperdiet. Morbi sit amet nisi vitae lorem congue egestas.</p>
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce varius neque urna, in pharetra nisi malesuada consectetur. Sed sodales pellentesque elit, sit amet hendrerit leo iaculis id. Pellentesque euismod nunc et libero vulputate vehicula. Cras sed lorem rhoncus, mattis mauris id, bibendum odio. Maecenas quis adipiscing enim. Ut luctus congue nisi, nec aliquet sapien elementum ut. Donec faucibus, quam ut tincidunt bibendum, felis quam consectetur tellus, in aliquet urna leo eu massa.</p>
 
         <p>Morbi a venenatis nibh. Ut eu ullamcorper turpis, vitae vulputate libero. Pellentesque semper, odio at rhoncus congue, nisi ipsum dapibus purus, in aliquam erat arcu eget elit. In hac habitasse platea dictumst. Duis enim elit, sagittis sed adipiscing et, pretium venenatis leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vestibulum suscipit elit, eu dapibus nisi faucibus quis. Pellentesque faucibus diam at orci lacinia, at aliquam nulla gravida. Aliquam ac vulputate erat. Vestibulum tincidunt nisl sed augue euismod pellentesque. Aenean eget leo in ipsum rhoncus bibendum blandit rutrum arcu. Morbi tempus tellus a sapien ultricies aliquam. Phasellus bibendum eros ac ante volutpat eleifend. Suspendisse vulputate dignissim mi quis lacinia. Donec nunc nibh, pharetra ac nulla id, dignissim pharetra sem.</p>
         
         <!-- this push element needs to be placed in you main content. It emulates the correct height of the document -->
-        <div class="push"></div> 
+        <div class="push-footer"></div> 
     </div>
 
     <!-- Footer needs to be directly inside body -->
@@ -43,7 +61,7 @@
         </div>
 
         <!-- here comes whatever you want to have in your sticky footer -->
-        <div class="footer">
+        <div class="content">
           <p>Morbi a venenatis nibh. Ut eu ullamcorper turpis, vitae vulputate libero. Pellentesque semper, odio at rhoncus congue, nisi ipsum dapibus purus, in aliquam erat arcu eget elit. In hac habitasse platea dictumst. Duis enim elit, sagittis sed adipiscing et, pretium venenatis leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vestibulum suscipit elit, eu dapibus nisi faucibus quis. Pellentesque faucibus diam at orci lacinia, at aliquam nulla gravida. Aliquam ac vulputate erat. Vestibulum tincidunt nisl sed augue euismod pellentesque. Aenean eget leo in ipsum rhoncus bibendum blandit rutrum arcu. Morbi tempus tellus a sapien ultricies aliquam. Phasellus bibendum eros ac ante volutpat eleifend. Suspendisse vulputate dignissim mi quis lacinia. Donec nunc nibh, pharetra ac nulla id, dignissim pharetra sem.</p>
         </div>
     </footer>

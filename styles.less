@@ -19,58 +19,94 @@ p {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto 0px; /* the bottom margin is the negative value of the footer's height */
+	margin: 0 auto 0; /* the bottom margin is the negative value of the footer's and header's height */
 	
 	width: 500px;
 }
 
-@footer-color: rgb(5,55,126);
-@footer-normal: desaturate(lighten(@footer-color, 20%), 50%);
+/* ************************************************************************
+    COMMON DEFINITIONS
+************************************************************************ */
 
-footer {
-    color: #fff;
-    background: @footer-normal;
+.stickyDefinition(@base-color, @shadow) {
+
+    @normal-color: desaturate(lighten(@base-color, 20%), 50%);
+
     width: 100%;
+    color: #fff;
+    background: @normal-color;
     transition: all ease-in-out 500ms;
-    bottom: -100%;
+
+    &.sticky {
+        background: fadeout(@base-color, 20%);
+        position: fixed;
+        .box-shadow(none);
+    }
     
-    .box-shadow(0 5px 5px -3px #000 inset);
+    &, &.sticky:hover {
+        .box-shadow(@shadow);
+    }
+
+    &.sticky:hover {
+        background: @normal-color;
+    }
+    
+    & div.visibleSticky,
+    &.sticky:hover div.visibleSticky,
+    &.sticky .content {
+        opacity: 0;
+    }
+    
+    &.sticky div.visibleSticky,
+    &.sticky:hover .content {
+        opacity: 1;
+    }
+
+    & .content {
+        opacity: 1;
+        padding: 25px 50px;
+    }
+
+
+    &.sticky div.visibleSticky,
+    & .content {
+        transition: all ease-in-out 500ms;
+    }
+
+    & div.visibleSticky {
+        text-align: right;
+        padding: 3px 10px;
+    }
+    
 }
 
-footer.sticky {
-    position: fixed;
-    background: fadeout(@footer-color, 20%);
-    .box-shadow(none);
+/* ************************************************************************
+    HEADER DEFINITIONS
+************************************************************************ */
+
+@header-color: rgb(5,126,55);
+header {
+
+    top: -100%;
+
+    .stickyDefinition(@header-color, ~'0 2px 5px #000');
+    &.sticky:hover {
+        top: 0 !important;
+    }
 }
 
-footer.sticky div.visibleSticky,
-footer .footer {
-    transition: all ease-in-out 500ms;
-}
+/* ************************************************************************
+    FOOTER DEFINITIONS
+************************************************************************ */
 
-footer.sticky:hover {
-    .box-shadow(0 5px 5px -3px #000 inset);
-    background: @footer-normal;
-    bottom: 0 !important;
-}
 
-footer div.visibleSticky,
-footer.sticky:hover div.visibleSticky,
-footer.sticky .footer {
-    opacity: 0;
-}
+@footer-color: rgb(5,55,126);
+footer {
 
-footer.sticky div.visibleSticky,
-footer.sticky:hover .footer {
-    opacity: 1;
-}
+    bottom: -100%;
 
-footer .footer {
-    opacity: 1;
-    padding: 25px 50px;
-}
-
-div.visibleSticky {
-    text-align: right;
-    padding: 3px 10px;
+    .stickyDefinition(@footer-color, ~'0 5px 5px -3px #000 inset');
+    &.sticky:hover {
+        bottom: 0 !important;
+    }
 }
