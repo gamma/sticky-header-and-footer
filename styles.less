@@ -12,6 +12,7 @@
 }
 
 html, body {
+    font: 12pt/1.5 "Helvetica Neue", Helvetica, sans-serif;
 	height: 100%;
 }
 
@@ -68,7 +69,7 @@ ul.navigation li a:hover {
     width: 100%;
     color: #fff;
     background: @normal-color;
-    transition: all ease-in-out 500ms;
+    .transition(all ease-in-out 500ms);
 
     &.sticky {
         background: fadeout(@base-color, 20%);
@@ -103,7 +104,7 @@ ul.navigation li a:hover {
 
     &.sticky div.visibleSticky,
     & .content {
-        transition: all ease-in-out 500ms;
+        .transition(all ease-in-out 500ms);
     }
 
     & div.visibleSticky {
