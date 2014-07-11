@@ -5,6 +5,20 @@
 ************************************************************************ */
 $(function(){
    
+    /* This is intended to smooth out resizing events */
+    var waitForFinalEvent = (function () {
+        var timers = {};
+        return function (callback, ms, uniqueId) {
+            if (!uniqueId) {
+                uniqueId = "Don't call this twice without a uniqueId";
+            }
+            if (timers[uniqueId]) {
+                clearTimeout (timers[uniqueId]);
+            }
+            timers[uniqueId] = setTimeout(callback, ms);
+        };
+    })();
+
     /* General Function */
     var stickyFunction = function(definition){
     
@@ -20,13 +34,15 @@ $(function(){
         var push = content.find('div.push-' + definition.root);
         
         var calcPosition = function() {
-        var height = element.outerHeight();
+            var height = element.outerHeight();
             push.height(height);
+
+            // Lets the footer/header show only the visible area part
             content.css('margin-' + definition.stickTo, -height);
-             // Lets the footer/header show only the visible area part
             element.css(definition.stickTo, -(height - visibleArea));
         }
         
+        /* this one dies the "heavy" lifting during scroll events. It should be kept simple! */
         var fixPosition = function() {
             if ( definition.stickyFunction(push, visibleArea) ) {
                 element.addClass("sticky");
@@ -34,9 +50,17 @@ $(function(){
                 element.removeClass("sticky");
             }
         };
+
+        // On load and Resize, wait for the final call
+        $(window).on( "load resize", function() {
+            waitForFinalEvent(function() {
+                calcPosition();
+                fixPosition();
+            }, 500, definition.root);
+        });
         
-        $(window).on( "load resize", calcPosition );
-        $(window).on( "load resize scroll", fixPosition );
+        // Fast call on scroll events
+        $(window).on( "scroll", fixPosition );
     };
     
     /* HEADER */
