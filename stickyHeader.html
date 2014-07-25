@@ -19,8 +19,19 @@
     <meta name="author" content="Gerry Weißbach"/>
     <meta name="keywords" content="sticky,header,footer"/>
 
-	<script src="./script.js"></script>
-	<!--[if lt IE 9]>
+	<script src="./jquery.sticky.js"></script>
+	<script>
+
+        /* INIT */
+        jQuery(function(){
+
+            jQuery('header').sticky({
+                visibleSticky: '.visibleSticky'
+            });
+
+        });
+
+	</script>	<!--[if lt IE 9]>
     	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
@@ -53,8 +64,6 @@
     </header>
     
     <div id="content">
-        <!-- this push element needs to be placed in you main content. It emulates the correct height of the document -->
-        <div class="push-header"></div> 
 
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum libero nisl, pellentesque pulvinar augue mattis eu. Nam eu vulputate neque. Morbi mauris purus, feugiat ut massa quis, fermentum congue justo. Fusce venenatis massa eu nibh vestibulum hendrerit. Pellentesque sed augue eget est pulvinar facilisis. Phasellus eleifend vestibulum magna vel varius. Sed quis quam pellentesque sapien interdum imperdiet. Morbi sit amet nisi vitae lorem congue egestas.</p>
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce varius neque urna, in pharetra nisi malesuada consectetur. Sed sodales pellentesque elit, sit amet hendrerit leo iaculis id. Pellentesque euismod nunc et libero vulputate vehicula. Cras sed lorem rhoncus, mattis mauris id, bibendum odio. Maecenas quis adipiscing enim. Ut luctus congue nisi, nec aliquet sapien elementum ut. Donec faucibus, quam ut tincidunt bibendum, felis quam consectetur tellus, in aliquet urna leo eu massa.</p>

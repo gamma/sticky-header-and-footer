@@ -73,7 +73,7 @@ ul.navigation li a:hover {
 
     &.sticky {
         background: fadeout(@base-color, 20%);
-        position: fixed;
+        // position: fixed;
         .box-shadow(none);
     }
     
@@ -88,16 +88,16 @@ ul.navigation li a:hover {
     & div.visibleSticky,
     &.sticky:hover div.visibleSticky,
     &.sticky .content {
-        opacity: 0;
+        // opacity: 0;
     }
     
     &.sticky div.visibleSticky,
     &.sticky:hover .content {
-        opacity: 1;
+        // opacity: 1;
     }
 
     & .content {
-        opacity: 1;
+        // opacity: 1;
         padding: 25px 50px;
     }
 
@@ -121,15 +121,9 @@ ul.navigation li a:hover {
 @header-color: rgb(5,126,55);
 header {
 
-    top: -100%;
-
     .stickyDefinition(@header-color, ~'0 2px 5px #000');
     &.sticky:hover {
         top: 0 !important;
-    }
-    
-    &.sticky ~ #content {
-        margin-top: 0 !important;
     }
 }
 
@@ -137,14 +131,17 @@ header {
     FOOTER DEFINITIONS
 ************************************************************************ */
 
-
 @footer-color: rgb(5,55,126);
 footer {
 
-    bottom: -100%;
+    // bottom: -100%;
 
     .stickyDefinition(@footer-color, ~'0 5px 5px -3px #000 inset');
     &.sticky:hover {
         bottom: 0 !important;
     }
+}
+
+div.sticky-pusher {
+        .transition(none);
 }
